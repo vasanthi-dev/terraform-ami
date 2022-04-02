@@ -1,6 +1,6 @@
 resource "aws_instance" "ami" {
   ami = data.aws_ami.ami.id
-  aws_instance = "t3.small"
+  instance_type = "t3.small"
   vpc_security_group_ids = [aws_security_group.sg.id]
   tags = {
     Name = "${var.COMPONENT}-ami"
